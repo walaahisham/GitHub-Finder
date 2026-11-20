@@ -18,17 +18,11 @@ export default function Profile({ user }) {
     <section className="mt-12 animate-fade-up">
 
       <div className="relative overflow-hidden rounded-3xl bg-white dark:bg-[#111426] border border-gray-200 dark:border-violet-500/20 shadow-2xl shadow-violet-950/10">
-
-        {/* Background Decoration */}
         <div className="absolute top-0 left-0 w-full h-28 bg-gradient-to-r from-violet-700 via-purple-600 to-indigo-600 opacity-95"></div>
         <div className="absolute -top-20 -right-16 w-64 h-64 bg-purple-400/20 rounded-full blur-3xl"></div>
-
-        {/* Profile Content */}
         <div className="relative px-6 md:px-10 pt-14 pb-8">
 
           <div className="flex flex-col md:flex-row md:items-start gap-6">
-
-            {/* Avatar */}
             <div className="shrink-0">
               <img
                 src={user.avatar_url}
@@ -39,7 +33,6 @@ export default function Profile({ user }) {
 
             {/* User Info */}
             <div className="flex-1 min-w-0 md:mt-16">
-
               <div className="flex flex-wrap items-center gap-3">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
                   {user.name || user.login}
@@ -60,7 +53,6 @@ export default function Profile({ user }) {
 
             </div>
 
-            {/* GitHub Button */}
             <a
               href={user.html_url}
               target="_blank"
@@ -73,7 +65,6 @@ export default function Profile({ user }) {
 
           </div>
 
-          {/* User Details */}
           <div className="flex flex-wrap gap-x-6 gap-y-3 mt-8 text-sm text-gray-500 dark:text-gray-400">
 
             {user.location && (
