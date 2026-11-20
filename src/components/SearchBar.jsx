@@ -12,7 +12,6 @@ export default function SearchBar({
         className="relative flex flex-col sm:flex-row items-center gap-3 p-3 rounded-2xl bg-white dark:bg-[#151326] border border-gray-200 dark:border-violet-500/20 shadow-xl shadow-violet-500/5 focus-within:border-violet-500/60 focus-within:shadow-violet-500/10 transition-all duration-300"
       >
 
-        {/* Search Icon + Input */}
         <div className="flex items-center flex-1 w-full gap-3 px-3">
 
           <div className="text-violet-500">
@@ -49,7 +48,7 @@ export default function SearchBar({
 
         </div>
 
-        {/* Search Button */}
+    
         <button
           type="submit"
           disabled={loading}
