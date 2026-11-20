@@ -25,9 +25,6 @@
   }
 }
 
-
-
-
 .light {
   --color-gray-50: #f3f0ff;   
   --color-gray-100: #ebe7fb;
@@ -44,18 +41,11 @@
   min-height: 100vh;
 }
 
-/* =========================
-   Text Selection
-========================= */
-
 ::selection {
   background: #8b5cf6;
   color: white;
 }
 
-/* =========================
-   Scrollbar
-========================= */
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -74,9 +64,6 @@
   background: #8b5cf6;
 }
 
-/* =========================
-   Animations
-========================= */
 
 @keyframes fadeUp {
   from {
@@ -109,9 +96,6 @@
   animation: float 4s ease-in-out infinite;
 }
 
-/* =========================
-   Gradient Text
-========================= */
 
 .gradient-text {
   background: linear-gradient(90deg, #a78bfa, #c084fc, #818cf8);
