@@ -10,7 +10,6 @@ import ScrollToTop from "./components/ScrollToTop"
 const API = "https://api.github.com/users"
 const PER_PAGE = 6
 
-// ===== localStorage helpers (آمنة ضد الأخطاء) =====
 function readTheme() {
   try {
     return localStorage.getItem("theme") !== "light"
@@ -32,14 +31,14 @@ function save(key, value) {
   try {
     localStorage.setItem(key, value)
   } catch {
-    /* ignore */
+    
   }
 }
 
 export default function App() {
   const [username, setUsername] = useState("")
   const [search, setSearch] = useState("")
-  const [searchId, setSearchId] = useState(0) // يزيد لإعادة نفس البحث
+  const [searchId, setSearchId] = useState(0) 
 
   const [user, setUser] = useState(null)
   const [repos, setRepos] = useState([])
@@ -56,12 +55,11 @@ export default function App() {
 
   const loadMoreController = useRef(null)
 
-  // Save Theme
+  
   useEffect(() => {
     save("theme", darkMode ? "dark" : "light")
   }, [darkMode])
 
-  // Save Search History
   useEffect(() => {
     save("searchHistory", JSON.stringify(history))
   }, [history])
@@ -84,7 +82,7 @@ export default function App() {
       setHasMore(false)
 
       try {
-        // الاتنين مع بعض بدل ما ينتظروا بعض
+      
         const [response, reposResponse] = await Promise.all([
           fetch(base, { signal }),
           fetch(`${base}/repos?sort=updated&per_page=${PER_PAGE}&page=1`, { signal }),
@@ -123,14 +121,13 @@ export default function App() {
 
     fetchUser()
 
-    // تنظيف: إلغاء أي طلب لسه شغال (بحث قديم أو Load More)
     return () => {
       controller.abort()
       loadMoreController.current?.abort()
     }
   }, [search, searchId])
 
-  // Load More Repositories
+  
   async function loadMore() {
     if (loadingMore || !hasMore || !search) return
 
@@ -165,7 +162,7 @@ export default function App() {
     }
   }
 
-  // Search User
+  
   function searchUser(e) {
     e.preventDefault()
 
@@ -183,13 +180,13 @@ export default function App() {
     setError("")
 
     if (value.toLowerCase() === search.toLowerCase()) {
-      setSearchId((n) => n + 1) // نفس الاسم: أعيدي الطلب
+      setSearchId((n) => n + 1) 
     } else {
       setSearch(value)
     }
   }
 
-  // Select Suggested or Recent User
+
   function selectUser(name) {
     setUsername(name)
     setError("")
@@ -201,12 +198,11 @@ export default function App() {
     }
   }
 
-  // Clear Search History
+  
   function clearHistory() {
     setHistory([])
   }
 
-  // Toggle Theme
   function toggleTheme() {
     setDarkMode((prev) => !prev)
   }
@@ -214,13 +210,9 @@ export default function App() {
   return (
     <div className={darkMode ? "dark" : "light"}>
       <main className="relative min-h-screen overflow-hidden bg-gray-50 dark:bg-[#080b16] text-gray-900 dark:text-white transition-colors duration-300">
-
-        {/* Background Decorations */}
         <div className="fixed top-0 left-0 w-96 h-96 bg-violet-400/30 dark:bg-violet-600/10 rounded-full blur-[130px] pointer-events-none"></div>
         <div className="fixed top-1/3 right-0 w-96 h-96 bg-purple-300/30 dark:bg-purple-600/10 rounded-full blur-[140px] pointer-events-none"></div>
         <div className="fixed bottom-0 left-1/3 w-80 h-80 bg-sky-300/30 dark:bg-indigo-600/10 rounded-full blur-[130px] pointer-events-none"></div>
-
-        {/* Main Container */}
         <div className="relative z-10 max-w-6xl mx-auto px-5 md:px-8 py-10 md:py-14">
 
           <Header darkMode={darkMode} toggleTheme={toggleTheme} />
@@ -232,7 +224,7 @@ export default function App() {
             loading={loading}
           />
 
-          {/* Search History */}
+          
           {history.length > 0 && (
             <section className="mt-8 p-5 rounded-2xl bg-white/80 dark:bg-[#111426]/80 backdrop-blur-xl border border-gray-200 dark:border-violet-500/15 shadow-lg shadow-black/5">
 
@@ -268,8 +260,8 @@ export default function App() {
               </div>
             </section>
           )}
-
-          {/* Suggested Users */}
+          
+        
           <div className="flex items-center justify-center flex-wrap gap-3 mt-7 text-sm">
             <span className="text-gray-500 dark:text-gray-400">Try searching:</span>
 
@@ -285,10 +277,10 @@ export default function App() {
             ))}
           </div>
 
-          {/* Welcome */}
+        
           {!user && !loading && !error && <Welcome onSelect={selectUser} />}
 
-          {/* Loading */}
+          
           {loading && (
             <div className="flex flex-col items-center justify-center mt-20 mb-20 gap-5">
               <div className="relative w-16 h-16">
