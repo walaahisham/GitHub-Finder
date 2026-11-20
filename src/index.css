@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: Inter, Arial, sans-serif;
+    background: #080b16;
+  }
+
+  button,
+  a,
+  input,
+  select {
+    transition: all 0.3s ease;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+
+
+
+.light {
+  --color-gray-50: #f3f0ff;   
+  --color-gray-100: #ebe7fb;
+  --color-gray-200: #d8d1f3;  
+  --color-gray-300: #bfb6e6;
+  --color-gray-400: #6e6a8c;  
+  --color-gray-500: #55516f;  
+  --color-gray-600: #3f3b57;
+  --color-gray-700: #2d2943;
+  --color-gray-900: #17132e;  
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* =========================
+   Text Selection
+========================= */
+
+::selection {
+  background: #8b5cf6;
+  color: white;
+}
+
+/* =========================
+   Scrollbar
+========================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090d19;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6d28d9;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8b5cf6;
+}
+
+/* =========================
+   Animations
+========================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.7s ease forwards;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* =========================
+   Gradient Text
+========================= */
+
+.gradient-text {
+  background: linear-gradient(90deg, #a78bfa, #c084fc, #818cf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
