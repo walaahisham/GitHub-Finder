@@ -10,13 +10,10 @@ export default function RepoCard({ repo }) {
 
   return (
     <article className="group relative flex flex-col h-full p-6 rounded-2xl bg-white dark:bg-[#111426] border border-gray-200 dark:border-violet-500/15 shadow-lg shadow-black/5 hover:border-violet-500/50 hover:shadow-xl hover:shadow-violet-950/20 hover:-translate-y-2 transition-all duration-300 overflow-hidden">
-
-      {/* Hover Glow */}
       <div className="absolute -top-20 -right-20 w-40 h-40 bg-violet-600/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
       {/* Header */}
       <div className="relative flex items-start justify-between gap-3">
-
         <div className="flex items-center gap-3 min-w-0">
 
           <div className="shrink-0 w-11 h-11 rounded-xl bg-violet-100 dark:bg-violet-500/15 flex items-center justify-center text-violet-600 dark:text-violet-400">
@@ -84,8 +81,6 @@ export default function RepoCard({ repo }) {
         </div>
 
       </div>
-
-      {/* Divider */}
       <div className="relative border-t border-gray-200 dark:border-gray-700/60 mt-6 mb-4"></div>
 
       {/* Footer */}
