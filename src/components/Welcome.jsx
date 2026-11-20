@@ -2,18 +2,17 @@ export default function Welcome({ onSelect }) {
   return (
     <section className="relative mt-20 mb-16 text-center animate-fade-up">
 
-      {/* Background Glow */}
+      
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-80 h-80 bg-violet-600/20 rounded-full blur-[120px] pointer-events-none"></div>
-
       <div className="relative">
 
-        {/* Badge */}
+      
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-600 dark:text-violet-300 text-xs font-semibold mb-8">
           <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
           Discover the Developer Community
         </div>
 
-        {/* Icon */}
+        
         <div className="w-24 h-24 mx-auto mb-8 flex items-center justify-center rounded-3xl bg-gradient-to-br from-violet-500 to-purple-700 shadow-2xl shadow-violet-600/30 animate-float">
 
           <svg
@@ -28,7 +27,7 @@ export default function Welcome({ onSelect }) {
 
         </div>
 
-        {/* Heading */}
+      
         <h2 className="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight tracking-tight">
 
           Explore the World of
@@ -38,8 +37,6 @@ export default function Welcome({ onSelect }) {
           </span>
 
         </h2>
-
-        {/* Description */}
         <p className="max-w-2xl mx-auto mt-7 text-base md:text-lg text-gray-500 dark:text-gray-400 leading-8">
 
           Discover talented developers, explore amazing repositories,
@@ -47,7 +44,7 @@ export default function Welcome({ onSelect }) {
 
         </p>
 
-        {/* Buttons */}
+  
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-10">
 
           <button
@@ -70,7 +67,7 @@ export default function Welcome({ onSelect }) {
 
         </div>
 
-        {/* Features */}
+    
         <div className="flex flex-wrap justify-center gap-3 mt-12">
 
           {[
